@@ -3,6 +3,10 @@ var app = express();
 var Negotiator = require('negotiator');
 
 app.get('/', function (req, res) {
+  res.send('Hello World!')
+});
+
+app.get('/api/whoami/', function (req, res) {
   var ipaddress = req.headers['x-forwarded-for'] || req.ip;
   if (ipaddress.substr(0, 7) == "::ffff:") {
     ipaddress = ipaddress.substr(7);
