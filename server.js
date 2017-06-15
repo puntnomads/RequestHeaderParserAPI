@@ -1,10 +1,15 @@
 var express = require("express");
+var path = require('path');
 var app = express();
 var Negotiator = require('negotiator');
 
+app.set('view engine', 'ejs');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', function (req, res) {
-  res.send('Hello World!')
-});
+  res.render('index');
+})
 
 app.get('/api/whoami/', function (req, res) {
   var ipaddress = req.headers['x-forwarded-for'] || req.ip;

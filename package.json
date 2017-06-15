@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^2.5.6",
     "express": "^4.15.2",
     "negotiator": "^0.6.1"
   }
